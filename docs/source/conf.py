@@ -116,9 +116,13 @@ html_sidebars = {
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    'logo' : 'foresteye_logo.png',
-    'github_user': 'bitprophet',
-    'github_repo': 'alabaster',
+    'logo' : '../../source/_figures/foresteye_logo.png',
+    'github_user': 'pmagdon',
+    'github_repo': 'OF_Collect_Importer_Uruguay',
+    'github_type': 'watch',
+    'github_banner': 'true',
+    'github_count' :'false',
+    'github_button' :'false',
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
