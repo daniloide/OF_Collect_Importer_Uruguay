@@ -20,8 +20,8 @@ import alabaster
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 # sys.path.insert(0, os.path.abspath('.'))
-
-sys.path.append(os.path.join(os.path.dirname(__name__), '.\uruguay'))
+sys.path.insert(0,os.path.abspath("../../"))
+#sys.path.append(os.path.join(os.path.dirname(__name__), '.\docs'))
 
 # -- General configuration ------------------------------------------------
 
