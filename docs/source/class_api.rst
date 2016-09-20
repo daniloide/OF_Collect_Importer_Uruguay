@@ -115,7 +115,10 @@ Import Fauna 2015
 .. automodule:: src.data_mapping_2015.import_fauna_2015
     :members:  import_fauna_2015
 
-
+Utils
+-----
+.. automodule:: src.utils.tools_lib
+    :members:  find_key,convert_text_to_numbers,convert_cobertura_copas,convert_cobertura_residuos,find_species,find_species_scientific,find_species_code,find_species_common,convert_plantacion_edad,convert_ntfp_gando_tipo,fix_coordinate_notation,convert_degrees_to_decimal,convert_arbol_diametro,convert_arbol_radius,import_variable,import_survey,import_species_list
 
 
 

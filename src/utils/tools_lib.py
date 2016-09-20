@@ -198,6 +198,7 @@ def convert_ntfp_gando_tipo(tipo):
 def fix_coordinate_notation(coord):
     """
     Fixes different spellings of the coordinates
+
     """
     degrees = None
     seconds = None
@@ -320,6 +321,7 @@ def convert_arbol_diametro(area):
 def convert_arbol_radius(radius):
     """
     Converts the numeric value of plot radius into plot size class
+
     :param radius: Plot Rrdius in meter
     """
     if radius == '':
@@ -337,6 +339,7 @@ def convert_arbol_radius(radius):
 def import_variable(row, variable, type, plotid, codelist=None, treeid=None):
     """
     Function to import_modules variable of a specific type from the a row of values
+
     :param row: A dictionary with keys and values
     :param variable: The name of the key that should be extracted
     :param type: The type of variable (int, float, string or code)
@@ -456,6 +459,7 @@ def import_survey(infile,PlotIDName,censo):
 def import_species_list(infile):
     """
     Function to import_modules species lists in the OF Collect format
+
     :param infile: Filepath of the exported species list from OF Collect
     :return: A dictonatry with species class instances for each species
     """
