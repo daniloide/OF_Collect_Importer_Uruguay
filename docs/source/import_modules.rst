@@ -49,37 +49,3 @@ Import Regeneration
 .. automodule:: src.import_modules.import_regeneration
     :members: import_regeneration
 
-
-Import Parcela 2010
--------------------
-.. automodule:: data_mapping_2010.import_plots_2010
-    :members: import_fni_plots_2010
-
-Import Distancia 2010
----------------------
-.. automodule:: data_mapping_2010.import_distancia_2010
-    :members:  import_distancia_2010
-
-Import Flora Suelo 2010
------------------------
-.. automodule:: data_mapping_2010.import_flora_suelo_2010
-    :members:  import_flora_suelo_2010
-
-Import Flora Soto Bosque 2010
------------------------------
-.. automodule:: data_mapping_2010.import_flora_soto_2010
-    :members:  import_flora_soto_2010
-
-Import Fauna 2010
------------------
-.. automodule:: data_mapping_2010.import_fauna_2010
-    :members:  import_fauna_2010
-
-Import 2015
-***********
-The classes in this module provide functions for importing IFN data in the 2015 data format
-
-
-
-
-
