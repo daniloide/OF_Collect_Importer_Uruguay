@@ -1,2 +1,2 @@
-__all__ = ['import_distances']
-import import_distances
+__all__ =['import_distancia']
+from src.data_mapping_2015 import *
