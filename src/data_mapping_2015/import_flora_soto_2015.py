@@ -6,9 +6,9 @@ import os
 import random
 import string
 
-from model import class_lib
-from model import code_lists
-from utils import tools_lib
+from src.model import class_lib
+from src.model import code_lists
+from src.utils import tools_lib
 
 
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):

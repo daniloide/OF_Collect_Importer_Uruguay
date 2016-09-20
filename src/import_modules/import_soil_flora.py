@@ -12,9 +12,9 @@ import os
 import sys
 import time
 
-from data_mapping_2010 import import_flora_suelo_2010
-from data_mapping_2015 import import_flora_suelo_2015
-from utils import tools_lib
+from src.data_mapping_2010 import import_flora_suelo_2010
+from src.data_mapping_2015 import import_flora_suelo_2015
+from src.utils import tools_lib
 
 
 def import_soil_flora(survey, species_list, infile, format, verbose=None):

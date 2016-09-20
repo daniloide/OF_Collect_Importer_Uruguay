@@ -12,9 +12,9 @@ import os
 import sys
 import time
 
-from data_mapping_2010 import import_flora_soto_2010
-from data_mapping_2015 import import_flora_soto_2015
-from utils import tools_lib
+from src.data_mapping_2010 import import_flora_soto_2010
+from src.data_mapping_2015 import import_flora_soto_2015
+from src.utils import tools_lib
 
 
 def import_forest_flora(survey, infile, format, verbose=None):

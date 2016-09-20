@@ -12,10 +12,10 @@ import os
 import sys
 import time
 
-from data_mapping_2010 import import_fauna_2010
-from data_mapping_2015 import import_fauna_2015
-from model import class_lib
-from utils import tools_lib
+from src.data_mapping_2010 import import_fauna_2010
+from src.data_mapping_2015 import import_fauna_2015
+from src.model import class_lib
+from src.utils import tools_lib
 
 
 def import_fauna(survey, species_list, infile, format, verbose=None):

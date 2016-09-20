@@ -4,9 +4,9 @@ import csv
 import logging
 import os
 
-from model import class_lib
-from model import code_lists
-from utils import tools_lib
+from src.model import class_lib
+from src.model import code_lists
+from src.utils import tools_lib
 
 
 def import_flora_suelo_2015(survey,species_list, infile):

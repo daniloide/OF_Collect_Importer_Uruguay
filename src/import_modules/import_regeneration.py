@@ -12,8 +12,8 @@ import os
 import sys
 import time
 
-from data_mapping_2015 import import_regeneracion_2015
-from utils import tools_lib
+from src.data_mapping_2015 import import_regeneracion_2015
+from src.utils import tools_lib
 
 
 def import_regeneration(survey,species_list, infile, format, verbose=None):

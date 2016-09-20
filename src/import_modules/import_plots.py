@@ -7,8 +7,8 @@ This script provides the functionality to import_modules the  plot information f
 of the data mangement modul.
 """
 
-from data_mapping_2010 import import_plots_2010
-from data_mapping_2015 import import_plots_2015
+from src.data_mapping_2010 import import_plots_2010
+from src.data_mapping_2015 import import_plots_2015
 
 def import_plots(survey,species_list,infile,format,verbose=None):
     """ Function to import_modules plot records from natural forest and plantations

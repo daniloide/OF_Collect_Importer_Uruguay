@@ -9,9 +9,9 @@ in OF Collect. The script can be used as a general python module in a python pro
 the console. Furthermore, a Windows binary with the extention .exe is provided if Python is not installed on the system.
 The syntaxy for the usage of the program as script or as exe in the Windows console is identical.
 """
-from data_mapping_2010 import import_arbol_2010
-from data_mapping_2010 import import_plots_2010
-from data_mapping_2015 import import_arbol_2015
+from src.data_mapping_2010 import import_arbol_2010
+from src.data_mapping_2010 import import_plots_2010
+from src.data_mapping_2015 import import_arbol_2015
 
 
 def import_trees(survey, species_list, infile_plots, infile_trees, format, verbose=None):
