@@ -4,7 +4,7 @@
 import csv
 import logging
 import subprocess
-from model import class_lib
+from src.model import class_lib
 
 
 def find_key(dic, val):

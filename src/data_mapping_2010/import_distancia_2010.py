@@ -8,8 +8,8 @@ import csv
 import logging
 import os
 
-from model import class_lib
-from utils import tools_lib
+from src.model import class_lib
+from src.utils import tools_lib
 
 
 def import_distancia_2010(survey, infile):

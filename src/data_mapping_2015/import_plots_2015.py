@@ -6,9 +6,9 @@ import logging
 import os
 import sys
 
-from model import class_lib
-from model import code_lists
-from utils import tools_lib
+from src.model import class_lib
+from src.model import code_lists
+from src.utils import tools_lib
 
 
 def import_fni_plots_2015(survey,species_list,infile):
