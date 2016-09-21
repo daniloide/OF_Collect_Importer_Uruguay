@@ -117,7 +117,7 @@ html_sidebars = {
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    'logo' : 'source/_figures/foresteye_logo.png',
+    'logo' : '../../../source/_figures/foresteye_logo.png',
     'github_user': 'pmagdon',
     'github_repo': 'OF_Collect_Importer_Uruguay',
     'github_type': 'watch',
