@@ -40,11 +40,13 @@ Data cleansing
 
 The data cleansing can be done in two steps:
 
-    #. When any of the import_modules are executed a log file is created with different information about the data translation process. Here, you will find information on such as misspelled or unknown species names or codes. Missing
-        information in the dataset etc. If you run the import modules with the flag "*-v*" you will also get information
-        about missing values.
-    #.While uploading the data files and internal validation will be done and OF Collect will display errors and warnings
-        in the data management view. There are different reasons why an error is issued when uploading the data:
+    #. When any of the import_modules are executed a log file is created with different information about the data
+        translation process. Here, you will find information on such as misspelled or unknown species names or codes. \
+        Missing information in the dataset etc. If you run the import modules with the flag "*-v*" you will also get \
+        information about missing values.
+    #. While uploading the data files and internal validation will be done and OF Collect will display errors and warnings in the data management view.
+
+There are different reasons why an error is issued when uploading the data:
 
 * The value for a required variable was not set as it is not provided in the raw data
 * The value is out of the value range
