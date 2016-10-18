@@ -229,8 +229,9 @@ def import_fni_plots_2010(survey, species_list, infile):
                 else:
                     survey.plots[ID].agua_agua_presencia = 2
                 survey.plots[ID].agua_agua_distancia_unit_name = 'metros'
-                # TODO clarify how to map agua_agua_nombre and 'tipo curso'
-                # plotA.agua_agua_nombre = row['tipo_curso']
+
+                survey.plots[ID].agua_agua_nombre = \
+                    tools_lib.import_variable(row,'Nomb_afluente','string',ID)
                 survey.plots[ID].agua_agua_manejo = \
                     tools_lib.import_variable(row, 'manejo', 'code', ID,
                                               codelist=code_lists.si_no)
@@ -268,7 +269,7 @@ def import_fni_plots_2010(survey, species_list, infile):
                     tools_lib.import_variable(row, 'propositoFuego', 'code', ID,
                                               codelist=code_lists.fuego_fuego_proposito)
 
-                # For plantationes set the species code
+                # For plantaciones set the species code
                 if survey.plots[ID].general_datos_parcela_bosque_tipo == 2:
                     survey.plots[ID].genero = row['genero'].strip()
                     especies = row['especie_plantacion'].strip()
@@ -291,22 +292,8 @@ def import_fni_plots_2010(survey, species_list, infile):
                                     "for plot{plotid}".format(species=plant_especies, plotid=ID)
                         logging.error(error_msg)
 
-                if row.has_key('edad') and row['edad'] not in ['', ' ']:
-                    try:
-                        edad_nr = tools_lib.convert_text_to_numbers(row['edad'], 'max', 'real')
-                        if edad_nr is not None:
-                            edad = tools_lib.convert_plantacion_edad(float(edad_nr))
-                            survey.plots[ID].plantacion_plant_edad = edad
-                        else:
-                            error_msg = "Could not convert the variable \"rango_edad\" with value: \"{value}\" to edad" \
-                                        "class for plot{plotid}".format(value=edad_nr, plotid=ID)
-                            logging.error(error_msg)
-
-                    except ValueError:
-                        error_msg = "Could not convert the variable \"rango_edad\" with value: \"{value}\" to a" \
-                                    "number for plot: {plotid}".format(value=row['edad'], plotid=ID)
-                        logging.error(error_msg)
-
+                survey.plots[ID].plantacion_plant_edad = \
+                    tools_lib.import_variable(row,'edad','code',ID,codelist=code_lists.plantacion_edad)
                 survey.plots[ID].plantacion_plant_raleo = \
                     tools_lib.import_variable(row, 'raleo', 'code', ID,
                                               codelist=code_lists.plantacion_raleo)
