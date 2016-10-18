@@ -91,7 +91,7 @@ def convert_cobertura_copas(percent):
         try:
             percent = float(percent)
         except ValueError:
-            print "Cannot conver the variable {} to a number"
+            print "Cannot convert the variable {} to a number"
 
         if percent == '':
           out = None
@@ -113,6 +113,15 @@ def convert_cobertura_residuos(percent):
     """
     Converts the numeric value into a class
     """
+    if percent is None:
+        return None
+    else:
+
+        try:
+            percent = float(percent)
+        except ValueError:
+            print "Cannot convert the variable {} to a number"
+
     if percent == '':
         out = None
     if percent == 0:
