@@ -492,6 +492,14 @@ plantacion_estado = {
     3: ["malo"]
 }
 
+plantacion_edad = {
+    1: ['0-5'],
+    2: ['> 5-10','5-10'],
+    3: ['> 10-15','10-15'],
+    4: ['> 15-20','15-20'],
+    5: ['> 20']
+}
+
 forestacion_forest_origen = {
     1: ["plantado", 'implantada','implantado'],
     2: ["regeneración natural", 'natural']
