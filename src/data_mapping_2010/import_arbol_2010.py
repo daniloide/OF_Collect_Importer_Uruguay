@@ -71,7 +71,7 @@ def import_fni_trees_2010(survey, species_list, infile):
                     survey.plots[id].add_tree(arbol_unico_id)
 
                 survey.plots[id].trees[arbol_unico_id].arbol_id = arbol_id
-                survey.plots[id].trees[arbol_unico_id].parcela = parcela
+                survey.plots[id].trees[arbol_unico_id].arbol_parcela = parcela
                 # For bosque nativo the species is observed on the single tree level and recorded in the tree table
                 if row.has_key('genero') and row.has_key('Especie'):
                     species_name = row['genero'] + ' ' + row['Especie']
