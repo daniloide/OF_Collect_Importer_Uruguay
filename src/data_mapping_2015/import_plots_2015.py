@@ -216,6 +216,8 @@ def import_fni_plots_2015(survey,species_list,infile):
                         tools_lib.import_variable(row, 'gradoCoberturaCopas', 'code', 'ID', code_lists.cobertura_grado)
                     survey.plots[ID].cobertura_vegetal_cobertura_sotobosque = \
                         tools_lib.import_variable(row, 'gradoSotobosque', 'code', ID, code_lists.cobertura_grado)
+                    if survey.plots[ID].cobertura_vegetal_cobertura_sotobosque is not None:
+                        survey.plots[ID].flora_soto_flora_soto_presencia= 2
                     if row.has_key('coberturaHerbacea'):
                         survey.plots[ID].cobertura_vegetal_cobertura_herbacea = \
                         tools_lib.import_variable(row, 'coberturaHerbacea', 'code', ID, code_lists.cobertura_grado)
