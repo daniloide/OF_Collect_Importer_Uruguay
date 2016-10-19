@@ -360,8 +360,9 @@ suelo_suelo_textura = {
     1: ["arenoso", "arenoso -", ],
     2: ["franco"],
     3: ["arcilloso", "arcillo-ar", "arcilloso-"],
-    4: ["franco-arcilloso", "fran.-arc."],
-    5: ["franco-arenoso", "arenoso fr", "arenoso/fr", "arenoso-fr", "fran.-aren", "franco arc", "franco are"],
+    4: ["franco-arcilloso", "fran.-arc.","franco arcilloso"],
+    5: ["franco-arenoso","franco arenoso", "arenoso fr", "arenoso/fr", "arenoso-fr", "fran.-aren", "franco arc",
+        "franco are"],
     6: ["limoso"]
 }
 
@@ -497,7 +498,7 @@ plantacion_edad = {
     2: ['> 5-10','5-10'],
     3: ['> 10-15','10-15'],
     4: ['> 15-20','15-20'],
-    5: ['> 20']
+    5: ['> 20', '>20']
 }
 
 forestacion_forest_origen = {
