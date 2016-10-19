@@ -752,17 +752,17 @@ class Plot:
         self.equipo = {}
         self.sanidad = {}
 
-    def add_tree(self, arbol_id):
+    def add_tree(self, arbol_unico_id):
         """
         Function to add a new tree to the plot
 
-        :param arbol_id: tree id
+        :param arbol_unico id: tree id
         """
-        if arbol_id not in self.trees.keys():
-            self.trees[arbol_id] = Tree(arbol_id=arbol_id)
-            print "Adding tree: {}".format(arbol_id)
+        if arbol_unico_id not in self.trees.keys():
+            self.trees[arbol_unico_id] = Tree(arbol_unico_id=arbol_unico_id)
+            print "Adding tree: {}".format(arbol_unico_id)
         else:
-            raise ValueError("Tree with TreeID {treeid} already exits in plot {plotid}".format(treeid=arbol_id,
+            raise ValueError("Tree with TreeID {treeid} already exits in plot {plotid}".format(treeid=arbol_unico_id,
                                                                                                plotid=self.parcela_id))
     def add_foto(self, foto_id):
         """
@@ -1608,12 +1608,12 @@ class Tree:
     Basic class for all tree level information
     """
 
-    def __init__(self, arbol_id):
+    def __init__(self, arbol_unico_id):
         # self.parcela_position = None
         self.parcela = None
-        self.arbol_id = arbol_id
-        self.stem_id = 0
-        self.arbol_unico_id = None
+        self.arbol_id = None
+        # self.stem_id = 0
+        self.arbol_unico_id = arbol_unico_id
         self.arbol_especie_code = None
         self.arbol_especie_scientific_name = None
         self.arbol_especie_vernacular_name = None
@@ -1740,7 +1740,7 @@ class FloraSuelo:
     
 class FloraSoto:
     """
-    Base class for forest fauna observations
+    Base class for flora sotobosque observations
     """
 
     def __init__(self, parcela_parcela_id,flora_soto_tipo):
