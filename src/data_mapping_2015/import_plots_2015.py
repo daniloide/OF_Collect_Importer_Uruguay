@@ -344,7 +344,7 @@ def import_fni_plots_2015(survey,species_list,infile):
                         survey.plots[ID].plantacion_plant_raleo = \
                             tools_lib.import_variable(row, 'raleo', 'code', ID,
                                                       code_lists.plantacion_raleo)
-                        survey.plots[ID].plant_poda = \
+                        survey.plots[ID].plantacion_plant_poda = \
                             tools_lib.import_variable(row, 'tienePoda', 'code', ID,
                                                       code_lists.si_no)
                         survey.plots[ID].plantacion_plant_poda_altura = \
