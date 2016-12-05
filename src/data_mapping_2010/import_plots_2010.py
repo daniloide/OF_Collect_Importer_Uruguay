@@ -219,15 +219,6 @@ def import_fni_plots_2010(survey, species_list, infile):
                                               codelist=code_lists.agua_agua_caudal)
                 survey.plots[ID].agua_agua_distancia = \
                     tools_lib.convert_text_to_numbers(row['distancia_agua'], 'mean', 'integer')
-
-                # The value 0 seems to indicate 'NoData' in this field
-                if survey.plots[ID].agua_agua_distancia == '0':
-                    survey.plots[ID].agua_agua_distancia = None
-
-                if survey.plots[ID].agua_agua_distancia is not None:
-                    survey.plots[ID].agua_agua_presencia = 1
-                else:
-                    survey.plots[ID].agua_agua_presencia = 2
                 survey.plots[ID].agua_agua_distancia_unit_name = 'metros'
 
                 survey.plots[ID].agua_agua_nombre = \
@@ -238,6 +229,11 @@ def import_fni_plots_2010(survey, species_list, infile):
                 survey.plots[ID].agua_agua_frec = \
                     tools_lib.import_variable(row, 'frecuencia_caudal', 'code', ID,
                                               codelist=code_lists.agua_agua_frec)
+                if survey.plots[ID].agua_agua_frec is not None:
+                    survey.plots[ID].agua_agua_presencia = 1
+                else:
+                    survey.plots[ID].agua_agua_presencia = 2
+
                 survey.plots[ID].agua_agua_acuicultura = \
                     tools_lib.import_variable(row, 'acuacultura', 'code', ID,
                                               codelist=code_lists.si_no)
