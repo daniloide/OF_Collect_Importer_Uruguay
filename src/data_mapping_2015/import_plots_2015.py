@@ -82,19 +82,20 @@ def import_fni_plots_2015(survey,species_list,infile):
                         warn_msg = 'Cannot convert the variable fecha wit value :\"{date}\" into a date \
                                     for plot {plotid}'.format(date=row['fecha'], plotid=ID)
                         logging.warn(warn_msg)
-
+                #Nativo
                 if row['name'] == 'Observaciones' and row.has_key('Observaciones'):
                     if row['Observaciones'] in ['',' ']:
                         survey.plots[ID].general_datos_parcela_commentario = '-'
                     else:
                         survey.plots[ID].general_datos_parcela_commentario = \
                             tools_lib.import_variable(row, 'Observaciones', 'string', ID)
-                if row['name'] == 'Observaciones'and row.has_key('observaciones'):
-                        if row['observaciones'] in ['', ' ']:
+                #Plantado
+                if row['name'] == 'Observaciones'and row.has_key('observacion'):
+                        if row['observacion'] in ['', ' ']:
                             survey.plots[ID].general_datos_parcela_commentario = '-'
                         else:
                             survey.plots[ID].general_datos_parcela_commentario = \
-                                tools_lib.import_variable(row, 'observaciones', 'string', ID)
+                                tools_lib.import_variable(row, 'observacion', 'string', ID)
 
                 # If there is no observation record found in the database set '-'
                 if survey.plots[ID].general_datos_parcela_commentario is None:
