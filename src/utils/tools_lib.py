@@ -413,7 +413,7 @@ def import_variable(row, variable, type, plotid, codelist=None, treeid=None):
             logging.error(error_msg)
             return
     if type =='code':
-        if row[variable].strip() == 'No Aplicable':
+        if row[variable].strip() == 'No Applicable':
             return
         if codelist:
             try:
