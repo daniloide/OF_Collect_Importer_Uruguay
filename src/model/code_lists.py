@@ -635,11 +635,11 @@ flora_suelo_freq = {
 }
 
 arbol_estrato ={
-    1:  ['inferior'],
-    2:  ['intermedio'],
-    3:  ['superior'],
+    1:  ['inferior','b'],
+    2:  ['intermedio','m'],
+    3:  ['superior','a'],
     4:  ['emergente'],
-    '-': ['no se define','a','b','m']
+    '-': ['no se define']
 }
 
 arbol_rango_edad = {
