@@ -12,7 +12,7 @@ The syntaxy for the usage of the program as script or as exe in the Windows cons
 from src.data_mapping_2010 import import_arbol_2010
 from src.data_mapping_2010 import import_plots_2010
 from src.data_mapping_2015 import import_arbol_2015
-
+from src.data_mapping_test import import_arbol_test
 
 def import_trees(survey, species_list, infile_plots, infile_trees, format, verbose=None):
     """ Function to import_modules tree data from natural forest and plantations the 2010 file format
@@ -62,6 +62,8 @@ def import_trees(survey, species_list, infile_plots, infile_trees, format, verbo
         import_arbol_2010.import_fni_trees_2010(survey, species_list, infile_trees)
     elif format == '2015':
         import_arbol_2015.import_fni_trees_2015(survey, species_list, infile_trees)
+    elif format == 'test':
+        import_arbol_test.import_fni_trees_test(survey, species_list, infile_trees)
     else:
         error_msg ="The file format {format} is unkown.".format(format=format)
         logging.error(error_msg)
@@ -82,7 +84,7 @@ if __name__ == "__main__":
     import logging
     import os
     import sys
-    from utils import tools_lib
+    from src.utils import tools_lib
 
     parser = argparse.ArgumentParser(
         description='Function to create csv of the single tree information')
@@ -92,7 +94,7 @@ if __name__ == "__main__":
     parser.add_argument("InFileNameSpecies", type=str,
                         help="Input csv file with tree species in the Collect format")
     parser.add_argument("OutFileName", type=str, help="Outputfile Name")
-    parser.add_argument("-f","--format", choices= ['2010','2015'], help="The data format either \"2010\" or \"2015\"")
+    parser.add_argument("-f","--format", choices= ['2010','2015', 'test'], help="The data format either \"2010\" or \"2015\" or \"test\"")
     parser.add_argument("-log", "--LogFileName", type=str, help="Filepath for the logfile")
 
     args = parser.parse_args()
@@ -119,7 +121,7 @@ if __name__ == "__main__":
     else:
         logging.basicConfig(format='%(levelname)s: %(message)s', filename=logfile, level=logging.INFO)
 
-    if format not in ['2010','2015']:
+    if format not in ['2010','2015', 'test']:
         error_msg = " The specified format: \"{format}\" is currently not supported".format(format=format)
         print error_msg
         sys.exit(0)
@@ -127,6 +129,8 @@ if __name__ == "__main__":
     if format == '2010':
         survey = tools_lib.import_survey(InFileNameTrees, 'p_muestreo_pl', 1)
     if format == '2015':
+        survey = tools_lib.import_survey(InFileNameTrees, 'nombre_pm', 1)
+    if format == 'test':
         survey = tools_lib.import_survey(InFileNameTrees, 'nombre_pm', 1)
     species_list = tools_lib.import_species_list(InFileNameSpecies)
     import_trees(survey, species_list, InFileNamePlots, InFileNameTrees, format, verbose)

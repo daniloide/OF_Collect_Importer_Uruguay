@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-s
 
 bosque_tipo = {
-    1: ['bosque nativo'],
+    1: ['bosque nativo', 'Bosque Nativo'],
     2: ['plantacion', 'plantación']
 }
 
 # dictionary of sub forest types
 subbosque_tipo = {
-    11: ['Galería','galería','galeria'],
+    11: ['Galería','galería','galeria', 'Galeria'],
     12: ['Serrano','serrano'],
     13: ['Parque', 'parque'],
     14: ['Quebrada','quebrada'],

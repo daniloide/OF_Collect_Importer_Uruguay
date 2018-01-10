@@ -9,6 +9,7 @@ of the data mangement modul.
 
 from src.data_mapping_2010 import import_plots_2010
 from src.data_mapping_2015 import import_plots_2015
+from src.data_mapping_test import import_plots_test
 
 def import_plots(survey,species_list,infile,format,verbose=None):
     """ Function to import_modules plot records from natural forest and plantations
@@ -49,6 +50,8 @@ def import_plots(survey,species_list,infile,format,verbose=None):
         import_plots_2010.import_fni_plots_2010(survey, species_list, infile)
     elif format == '2015':
         import_plots_2015.import_fni_plots_2015(survey, species_list, infile)
+    elif format == 'test':
+        import_plots_test.import_fni_plots_test(survey, species_list, infile)
     else:
         warn_message = "The file format {format} is not supported".format(format=format)
         logging.warn(warn_message)
@@ -67,7 +70,7 @@ if __name__ == "__main__":
     import logging
     import os
     import sys
-    from utils import tools_lib
+    from src.utils import tools_lib
 
     parser = argparse.ArgumentParser(
         description='Function to create csv of the plot information to import_modules in OF Collect')
@@ -76,7 +79,7 @@ if __name__ == "__main__":
     parser.add_argument("InFileNameSpecies", type=str,
                         help="Input csv file with tree species in the Collect format")
     parser.add_argument("OutFileName", type=str, help="Outputfile Name")
-    parser.add_argument("-f","--format", choices=['2010','2015'], help="The data format either \"2010\" or \"2015\"")
+    parser.add_argument("-f","--format", choices=['2010','2015', 'test'], help="The data format either \"2010\" or \"2015\"")
     parser.add_argument("-log", "--LogFileName", type=str, help="Filepath for the logfile")
 
     args = parser.parse_args()
@@ -101,7 +104,7 @@ if __name__ == "__main__":
     else:
         logging.basicConfig(format='%(levelname)s: %(message)s', filename=logfile, level=logging.INFO)
 
-    if format not in ['2010','2015']:
+    if format not in ['2010','2015', 'test']:
         error_msg = " The specified format: \"{format}\" is currently not supported".format(format=format)
         print error_msg
         sys.exit(0)
